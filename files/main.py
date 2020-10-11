@@ -9,6 +9,11 @@ def pause():
     os.system('pause >> null.txt')
 
 
+def spacing():
+    os.system('cls')
+    for i in range(1, 10):
+        print()
+
 def greeting():
     os.system('cls')
     print('''
@@ -27,10 +32,7 @@ def greeting():
 
 # In the function below you must past the full path to your hidden folder
 def open_folder():
-    os.system('cls')
-    for i in range(1, 10):
-        print()
-
+    spacing()
     print('                           HELLO Ismail ! ')
     print('                  WELCOME TO YOUR SECRET FOLDER !')
     os.system('start C:\\Users\\dell\\Desktop\\Secretfolder')
@@ -54,9 +56,8 @@ username = input('Username: ')
 if username == 'Ismail Aj':
     greeting()
     print(f'\n Hello Ismail, please enter the password to access your secret folder !\n')
-    print('              Password will be hidden for security reasons                  ')
+    print('              Password will be hidden for security reasons\n')
     password = get_password()
-
     if bcrypt.checkpw(password, hashed_pwd):
         open_folder()
 
@@ -74,10 +75,12 @@ if username == 'Ismail Aj':
                 counter -= 1
 
         else:
+            spacing()
             print('                 Am I a joke for you  -_-')
             pause()
 
 else:
+    spacing()
     print('INVALID USERNAME !')
     os.system(f'echo {username}>> null.txt')
     pause()
