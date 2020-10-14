@@ -2,9 +2,6 @@ from getpass import getpass
 import bcrypt
 import os
 
-os.system('color a')
-
-
 def pause():
     os.system('pause >> null.txt')
 
@@ -33,9 +30,9 @@ def greeting():
 # In the function below you must past the full path to your hidden folder
 def open_folder():
     spacing()
-    print('                           HELLO Ismail ! ')
+    print('                           HELLO USER! ')
     print('                  WELCOME TO YOUR SECRET FOLDER !')
-    os.system('start C:\\Users\\dell\\Desktop\\Secretfolder')
+    os.system('start C:\\Path to\\Secretfolder')
     pause()
 
 
@@ -48,14 +45,14 @@ greeting()
 
 # you must past your hashed password in the 'hashed_pwd' variable
 
-hashed_pwd = b'$2b$12$/rmTLlUMpdqWqzogvi1np.wiVuNVgOL.Eqp1AEgYvKMhtLYIit942'
+hashed_pwd = b'hashed password'
 
 counter = 2
 username = input('Username: ')
 
-if username == 'Ismail Aj':
+if username == 'username':
     greeting()
-    print(f'\n Hello Ismail, please enter the password to access your secret folder !\n')
+    print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
     print('              Password will be hidden for security reasons\n')
     password = get_password()
     if bcrypt.checkpw(password, hashed_pwd):
