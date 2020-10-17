@@ -32,7 +32,7 @@ def open_folder():
     spacing()
     print('                           HELLO USER! ')
     print('                  WELCOME TO YOUR SECRET FOLDER !')
-    os.system('start C:\\Path to\\Secretfolder')
+    os.system('start ..')
     pause()
 
 
@@ -73,7 +73,7 @@ if username == 'username':
 
         else:
             spacing()
-            print('                 Am I a joke for you  -_-')
+            print('INVALID USERNAME !')
             pause()
 
 else:
