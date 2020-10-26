@@ -2,6 +2,7 @@ from getpass import getpass
 import bcrypt
 import os
 
+
 def pause():
     os.system('pause >> null.txt')
 
@@ -11,7 +12,8 @@ def spacing():
     for i in range(1, 10):
         print()
 
-def greeting():
+
+def interface():
     os.system('cls')
     print('''
     ######################################################
@@ -27,57 +29,55 @@ def greeting():
     ''')
 
 
-# In the function below you must past the full path to your hidden folder
 def open_folder():
     spacing()
-    print('                           HELLO USER! ')
+    print('                           HELLO username ! ')
     print('                  WELCOME TO YOUR SECRET FOLDER !')
-    os.system('start ..')
+    os.startfile(os.path.dirname(os.getcwd()))
     pause()
 
 
-def get_password():
-    p = getpass()
-    return p.encode()
+def is_true_password(input_pwd: str):
+    hashed_pwd = b'hashed password'
+    password = input_pwd.encode()
+    return bcrypt.checkpw(password, hashed_pwd)
 
 
-greeting()
-
-# you must past your hashed password in the 'hashed_pwd' variable
-
-hashed_pwd = b'hashed password'
-
-counter = 2
-username = input('Username: ')
-
-if username == 'username':
-    greeting()
-    print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
-    print('              Password will be hidden for security reasons\n')
-    password = get_password()
-    if bcrypt.checkpw(password, hashed_pwd):
+def get_pwd():
+    input_password = getpass()
+    counter= 2
+    if is_true_password(input_password):
         open_folder()
-
     else:
         while counter > 0:
-            greeting()
-            print(f'Wrong password: {counter} attempts left ! \n')
-            password = get_password()
-
-            if bcrypt.checkpw(password, hashed_pwd):
+            interface()
+            print(f'WRONG PASSWORD: {counter} attempts left ! \n')
+            input_password = getpass()
+            if is_true_password(input_password):
                 open_folder()
                 break
-
             else:
                 counter -= 1
-
         else:
             spacing()
-            print('INVALID USERNAME !')
+            print('                 Am I a joke for you  -_-')
             pause()
 
-else:
-    spacing()
-    print('INVALID USERNAME !')
-    os.system(f'echo {username}>> null.txt')
-    pause()
+
+def main():
+    interface()
+    username = input('Username: ')
+    if username == 'username':
+        interface()
+        print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
+        print('              Password will be hidden for security reasons\n\n')
+        get_pwd()
+    else:
+        spacing()
+        print('INVALID USERNAME !')
+        os.system(f'echo {username}>> null.txt')
+        pause()
+
+
+if __name__ == '__main__':
+    main()
