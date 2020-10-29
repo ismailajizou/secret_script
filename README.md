@@ -4,9 +4,9 @@
 ```
     >> pip install bcrypt
 ```
-1-You should hash your password by running <strong>get_hash.py</strong> and type the password you want to hash .
+1-You should hash your password by going to <strong>hash_password</strong> directory and run <strong>get_hash.py</strong> then input the password you want to hash and copy the result.
 
-2-After that put the result into <strong>main.py</strong> as the hashed_pwd variable .
+2-After that go to <strong>Account</strong> directory, open <strong>account.py</strong> and enter your hashed password and username there.
 
 3-Make sure this project folder is in your secret folder .
 
