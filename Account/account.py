@@ -1,8 +1,8 @@
 class Account:
     def __init__(self):
         self.username = 'username'
-        self.hashed_pwd = b'hashed password'
-        self.secretfolder_path = 'path to secret folder'
-
+        self.hashed_pwd = b'Hashed password'
+        self.secret_folder_path = 'path/to/secretfolder'
     
 account = Account()
+

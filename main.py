@@ -5,19 +5,23 @@ import os
 
 
 def main():
-    interface()
-    username = account.username
-    input_username = input('Username: ')
-    if input_username == username:
+    os.system('color a')
+    try:
         interface()
-        print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
-        print('              Password will be hidden for security reasons\n\n')
-        get_pwd()
-    else:
-        spacing()
-        print('INVALID USERNAME !')
-        os.system(f'echo {username}>> null.txt')
-        pause()
+        username = account.username
+        input_username = input('Username: ')
+        if input_username == username:
+            interface()
+            print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
+            print('              Password will be hidden for security reasons\n\n')
+            get_pwd()
+        else:
+            spacing()
+            print('INVALID USERNAME !')
+            pause()
+    except KeyboardInterrupt:
+        exit()
+
 
 if __name__ == '__main__':
     main()

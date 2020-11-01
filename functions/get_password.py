@@ -31,3 +31,8 @@ def get_pwd():
             spacing()
             print('                 Am I a joke for you  -_-')
             pause()
+
+            
+
+if __name__ == '__main__':
+    get_pwd()

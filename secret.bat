@@ -1,7 +1,5 @@
-COLOR a
+@ECHO off
 CD /d "%~dp0"
 CLS
-@ECHO off
-python .\main.py
-ERASE null.txt
+START ./main.py
 EXIT
