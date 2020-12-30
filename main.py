@@ -1,4 +1,4 @@
-from package.apparance import interface, pause
+from functions.apparance import interface, pause
 from secret.secret import secret
 from secret.setNewAcc import setNewAcc
 

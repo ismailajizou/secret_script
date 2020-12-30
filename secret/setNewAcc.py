@@ -1,7 +1,7 @@
 from getpass import getpass
-from package.get_username import is_username_true
-from package.get_password import is_true_password
-from package.apparance import interface, pause
+from functions.get_username import is_username_true
+from functions.get_password import is_true_password
+from functions.apparance import interface, pause
 from Account.account import account
 from secret.encryptpwd import encryptPass
 

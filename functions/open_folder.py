@@ -1,5 +1,5 @@
 from os import path, startfile
-from package.apparance import spacing, pause
+from functions.apparance import spacing, pause
 from Account.account import account
 
 

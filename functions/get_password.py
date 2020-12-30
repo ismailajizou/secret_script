@@ -1,7 +1,7 @@
 from Account.account import account
 from bcrypt import checkpw
 from getpass import getpass
-from package.apparance import spacing, interface, pause
+from functions.apparance import spacing, interface, pause
 from .open_folder import open_folder
 
 

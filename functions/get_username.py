@@ -1,6 +1,6 @@
 from Account.account import account
-from package.get_password import get_pwd
-from package.apparance import spacing, interface, pause
+from functions.get_password import get_pwd
+from functions.apparance import spacing, interface, pause
 
 
 def is_username_true(input_username: str):

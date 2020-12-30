@@ -1,5 +1,5 @@
-from package.get_username import check_username
-from package.apparance import interface
+from functions.get_username import check_username
+from functions.apparance import interface
 
 
 def secret():
