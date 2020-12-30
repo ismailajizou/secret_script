@@ -1,12 +1,15 @@
-import os
+from os import system, remove
+
 
 def spacing():
-    os.system('cls')
+    system('cls')
     for i in range(1, 10):
         print()
 
+
 def interface():
-    os.system('cls')
+    system("color a")
+    system('cls')
     print('''
     ######################################################
 
@@ -20,5 +23,8 @@ def interface():
     ######################################################
     ''')
 
+
 def pause():
-    os.system('pause >> null.txt')
+    system('pause >> null.txt')
+    remove('null.txt')
+    system('EXIT')

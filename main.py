@@ -1,27 +1,27 @@
-from functions.apparance import spacing, interface, pause
-from functions.get_password import get_pwd
-from Account.account import account
-import os
+from package.apparance import interface, pause
+from secret.secret import secret
+from secret.setNewAcc import setNewAcc
 
 
 def main():
-    os.system('color a')
     try:
         interface()
-        username = account.username
-        input_username = input('Username: ')
-        if input_username == username:
-            interface()
-            print(f'\n Hello {username}, please enter the password to access your secret folder !\n')
-            print('              Password will be hidden for security reasons\n\n')
-            get_pwd()
+        print("Hello To your secret script")
+        print("\t1-Open your Secret Folder")
+        print("\t2-Set new Username & Password\n")
+
+        choice = int(input("Your choice: "))
+
+        if (choice == 1):
+            secret()
+        elif(choice == 2):
+            setNewAcc()
         else:
-            spacing()
-            print('INVALID USERNAME !')
+            print("UNVALID CHOICE !!")
             pause()
-    except KeyboardInterrupt:
+    except:
         exit()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
