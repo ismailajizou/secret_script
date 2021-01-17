@@ -12,24 +12,20 @@ def is_true_password(input_pwd: str):
 
 
 def get_pwd():
-    input_password = getpass()
-    counter = 2
-    if is_true_password(input_password):
-        open_folder()
-    else:
-        while counter > 0:
-            interface()
-            print(f'WRONG PASSWORD: {counter} attempts left ! \n')
-            input_password = getpass()
-            if is_true_password(input_password):
-                open_folder()
-                break
-            else:
-                counter -= 1
+    counter = 3
+    while counter > 0:
+        interface()
+        print(f'{counter} attempts left ! \n')
+        input_password = getpass(prompt="Password: ")
+        if is_true_password(input_password):
+            open_folder()
+            break
         else:
-            spacing()
-            print('\t\tAm I a joke for you  -_-')
-            pause()
+            counter -= 1
+    else:
+        spacing()
+        print('\t\tAm I a joke for you  -_-')
+        pause()
 
 
 if __name__ == '__main__':
